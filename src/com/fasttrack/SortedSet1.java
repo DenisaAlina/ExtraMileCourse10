@@ -1,12 +1,19 @@
 package com.fasttrack;
 
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class SortedSet1 {
     private List<Integer> sortedSet1;
 
     public SortedSet1(List<Integer> sortedSet1) {
+        HashSet hs = new HashSet();
+        hs.addAll(sortedSet1);
+        sortedSet1.clear();
+        sortedSet1.addAll(hs);
+        Collections.sort(sortedSet1);
+        this.sortedSet1 = sortedSet1;
+
+        /*
         Collections.sort(sortedSet1);
         for (int i = 0; i < sortedSet1.size(); i++) {
             for (int j = 0; j < sortedSet1.size(); j++) {
@@ -20,6 +27,10 @@ public class SortedSet1 {
             }
         }
         this.sortedSet1 = sortedSet1;
+
+
+         */
+
     }
 
     public void add(int element) {
